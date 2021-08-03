@@ -7,7 +7,7 @@ if(!isset($_SESSION["login_sess"]))
 <!-- Footer -->
 <footer class="page-footer font-small" style="background-color:#0046C2;color:white">
   <div class="footer-copyright text-center py-3">© <?php echo date("Y"); ?>
-    <a href="https://mdbootstrap.com/" style="color:skyblue"> TechOshop</a>
+    <a href="#" style="color:skyblue"> TechOshop</a>
   </div>
 </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
