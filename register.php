@@ -87,7 +87,7 @@ if($password != $passwordConfirm){
         $options = array("cost"=>4);
         $password = password_hash($password,PASSWORD_BCRYPT,$options);
 
-        $result = mysqli_query($dbc,"INSERT into users values('','$fname','$lname','$username','$email','$password','$date')");
+        $result = mysqli_query($dbc,"INSERT into users values('','$fname','$lname','$username','$email','$password','$date','user','','')");
 
         if($result)
         {

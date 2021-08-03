@@ -2,17 +2,15 @@
 <?php require_once("config.php");
 
 $email=$_SESSION["login_email"];
+$b = $_GET["b"];
 $findresult = mysqli_query($dbc, "SELECT * FROM users WHERE email= '$email'");
 if($res = mysqli_fetch_array($findresult))
 {
-  $username = $res['username']; 
-  // $fname = $res['fname'];   
-  // $lname = $res['lname'];  
-  // $email = $res['email'];  
+  $username = $res['username'];
 }
 include("static/header.php")
 ?> 
-  <title>Home - TechOshop</title>
+  <title> <?php echo $b; ?> - TechOshop</title>
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
@@ -24,11 +22,11 @@ include("static/header.php")
       <div class="brands">
         <div class="h4 head">Choose a brand:</div>
         <ul>
-          <a href="brand.php?b=Apple"><li>Apple</li></a>
-          <a href="brand.php?b=Samsung"><li>Samsung</li></a>
-          <a href="brand.php?b=Xiaomi"><li>Xiaomi</li></a>
-          <a href="brand.php?b=Oppo"><li>Oppo</li></a>
-          <a href="brand.php?b=Other"><li>Other brands</li></a>
+          <a href="brand.php?b=apple"><li>Apple</li></a>
+          <a href="brand.php?b=samsung"><li>Samsung</li></a>
+          <a href="brand.php?b=xiaomi"><li>Xiaomi</li></a>
+          <a href="brand.php?b=oppo"><li>Oppo</li></a>
+          <a href="brand.php?b=other"><li>Other brands</li></a>
         </ul>
       </div>
 </div>
