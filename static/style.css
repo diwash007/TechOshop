@@ -58,14 +58,16 @@ nav {
   padding-bottom:100px;
   background:white;
 }
-.brands ul {
+.brands ul, .items ul {
   list-style-type:none;
 }
 .brands li {
-  text-align:center;
-  color:#0046C2;
   font-weight:bold;
+  text-align:center;
   font-size:20px;
+}
+.brands li, .items li {
+  color:#0046C2;
   background:#EAE9E5;
   margin:30px;
   border: 1px solid #0046C2;
@@ -73,7 +75,7 @@ nav {
   padding:10px;
   max-width:600px;
 }
-.brands li:hover {
+.brands li:hover, .items li:hover {
   color:white;
   background:#0046C2;
   box-shadow: 5px 5px 10px gray;
@@ -82,6 +84,11 @@ nav {
   padding-top:40px;
   padding-bottom:10px;
 }
-.cart {
-
+.price {
+  color:green;
+  float:right;
+}
+.title {
+  font-weight:bold;
+  font-size:20px;
 }
