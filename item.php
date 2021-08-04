@@ -1,32 +1,28 @@
-<!DOCTYPE html>
 <?php require_once("config.php");
 
 $email=$_SESSION["login_email"];
 $i = $_GET["i"];
 
-function get_product_details()
-    {
-        global $dbc,$i;
-        $ret = array();
-        $sql = "SELECT * FROM items where brand='$i'";
-        $res = mysqli_query($dbc, $sql);
-
-        while($ar = mysqli_fetch_assoc($res))
-        {
-            $ret[] = $ar;
-        }
-        return $ret;
-    }
+// getting item data 
+$get_item = mysqli_query($dbc, "SELECT * from items WHERE id='$i'");
+$curr_item = mysqli_fetch_array($get_item);
+$iname = $curr_item['name'];
+$idetails = $curr_item['details'];
+$ibrand = $curr_item['brand'];
+$iimg = $curr_item['image'];
+$iprice = $curr_item['price'];
 
 if(empty($i)) {
   header("location:home.php"); 
 }
+
 $findresult = mysqli_query($dbc, "SELECT * FROM users WHERE email= '$email'");
+
 if($res = mysqli_fetch_array($findresult))
 {
   $username = $res['username'];
 }
-$items = mysqli_query($dbc, "SELECT * FROM users WHERE email= '$email'");
+
 include("static/header.php")
 ?> 
   <title> <?php echo $i; ?> - TechOshop</title>
@@ -38,10 +34,26 @@ include("static/header.php")
       <span>Welcome, <b><?php echo $username; ?></b> (<a href="cart.php">Cart</a>) </span>
       <a href="logout.php" style="float:right;color:red">logout?</a>
 
+      <form method="POST" action="add.php">
       <div class="items">
-        <div class="h4 head"><?php echo $i; ?>:</div>
-        
+        <div class="h4 head"><?php echo $iname; ?></div>
+        <div class="item-display">
+        <?php
+        echo '<div class=img>';
+        echo '<img src='.$iimg.' height=200 width=200></div><br>';
+        echo '<span class=iprice><b>$';
+        echo $iprice;
+        echo '</b></span><div class=details>';
+        echo $idetails;
+        ?>
+        <br>
+        <label>Quantity:</label><input type="number" name="quantity" min="1" max="10">
+        </div><br>
+        <div class="cartbtn_area">
+        <button type="submit" name="addcart" class="btn btn-primary btn-group-lg cartbtn">Add to Cart</button></div>
       </div>
+      </div>
+    </form>
 </div>
 
 <?php include("static/footer.php")?>

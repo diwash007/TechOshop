@@ -12,12 +12,21 @@ nav {
   box-shadow: 0px 1px 36px 5px rgba(0,0,0,0.28);
   border-radius: 5px;
 }
-.form_btn{ 
+.form_btn, .cartbtn{ 
   background: #0046C2;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
   border: none;
   color: #fff; 
-  width: 100% 
+}
+.form_btn {
+  width:100%;
+}
+.cartbtn {
+  font-weight: bold;
+  width:400px;
+}
+.cartbtn_area {
+  text-align:center;
 }
 .label_txt{ 
   font-size: 12px; 
@@ -60,6 +69,7 @@ nav {
 }
 .brands ul, .items ul {
   list-style-type:none;
+  max-width:800px;
 }
 .brands li {
   font-weight:bold;
@@ -73,7 +83,6 @@ nav {
   border: 1px solid #0046C2;
   border-radius:5px;
   padding:10px;
-  max-width:600px;
 }
 .brands li:hover, .items li:hover {
   color:white;
@@ -84,11 +93,44 @@ nav {
   padding-top:40px;
   padding-bottom:10px;
 }
-.price {
+.price, .iprice {
   color:green;
   float:right;
 }
 .title {
   font-weight:bold;
   font-size:20px;
+}
+.img {
+  text-align:center;
+}
+.iprice {
+  font-size:18px;
+  margin-right:35%;
+}
+.details {
+  margin-left:35%;
+}
+.items label {
+  padding-right:210px;
+}
+@media only screen and (max-width: 600px) {
+  .cartbtn {
+  width:300px;
+  }
+  .iprice {
+    margin-right:20%;
+  }
+  .details {
+    margin-left:20%;
+  }
+  .items label {
+  padding-right:110px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+nav {
+  padding-left:20px !important;
+  }
 }
