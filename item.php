@@ -17,10 +17,10 @@ if(empty($i)) {
 }
 
 $findresult = mysqli_query($dbc, "SELECT * FROM users WHERE email= '$email'");
-
 if($res = mysqli_fetch_array($findresult))
 {
   $username = $res['username'];
+  $uid = $res['id'];
 }
 
 include("static/header.php")
@@ -34,7 +34,22 @@ include("static/header.php")
       <span>Welcome, <b><?php echo $username; ?></b> (<a href="cart.php">Cart</a>) </span>
       <a href="logout.php" style="float:right;color:red">logout?</a>
 
-      <form method="POST" action="add.php">
+      <?php
+        if(isset($_POST['addcart'])){ 
+          $quantity= $_POST['quantity'];
+
+          $add_item = mysqli_query($dbc, "INSERT INTO cart values ('$uid', '$i', '$quantity')");
+
+          if($add_item) {
+            echo "<div class=successmsg>Added to Cart successfully!</div>";
+          }
+          else {
+            echo "<div class=errormsg>Something went wrong!</div>";
+          }
+        }
+      ?>
+
+      <form method="POST" action="">
       <div class="items">
         <div class="h4 head"><?php echo $iname; ?></div>
         <div class="item-display">
@@ -47,7 +62,7 @@ include("static/header.php")
         echo $idetails;
         ?>
         <br>
-        <label>Quantity:</label><input type="number" name="quantity" min="1" max="10">
+        <label>Quantity:</label><input type="number" name="quantity" value="1" min="1" max="10">
         </div><br>
         <div class="cartbtn_area">
         <button type="submit" name="addcart" class="btn btn-primary btn-group-lg cartbtn">Add to Cart</button></div>
