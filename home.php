@@ -19,8 +19,8 @@ include("static/header.php")
 <body>
   <div class="container hero">
 
-    <span>Welcome, <b><?php echo $username; ?></b> (<a href="cart.php">Cart</a>) </span>
-    <a href="logout.php" style="float:right;color:red">logout?</a>
+      <span>Welcome, <b><?php echo $username; ?></b></span>
+      <span style="float:right"><a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span>
 
     <div class="brands">
       <div class="h4 head">Choose a brand:</div>

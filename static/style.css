@@ -4,6 +4,9 @@ body{
 nav {
  padding:10px 100px !important;
 }
+.container {
+  min-height: 85vh;
+}
 .login_form{
   margin-top: 25%;
   margin-bottom: 25%;
@@ -124,9 +127,9 @@ nav {
   text-align: left;
   margin-left:30%;
 }
-
-
-
+table tr {
+  border-bottom:1px solid #0046C2;
+}
 @media only screen and (max-width: 600px) {
   .cartbtn {
   width:300px;

@@ -21,8 +21,8 @@ include("static/header.php")
 <body>
   <div class="container hero">
 
-      <span>Welcome, <b><?php echo $username; ?></b> (<a href="cart.php">Cart</a>) </span>
-      <a href="logout.php" style="float:right;color:red">logout?</a>
+      <span>Welcome, <b><?php echo $username; ?></b></span>
+      <span style="float:right"><a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span>
 
       <form method="POST" action="">
       <div class="items">
@@ -75,7 +75,8 @@ include("static/header.php")
             $address = $_POST['address'];
             $query0 = mysqli_query($dbc, "UPDATE users SET country='$country', address='$address' WHERE id='$uid' ");
             $query1 = mysqli_query($dbc, "INSERT INTO orders VALUES ('','$uid','$date','$total','$address')");
-            $get_oid = mysqli_query($dbc, "SELECT * from orders WHERE total='$total'");
+            // $get_oid = mysqli_query($dbc, "SELECT * from orders WHERE total='$total'");
+            $get_oid = mysqli_fetch_assoc($query1);
             $oid = mysqli_fetch_array($get_oid)['id'];
             
             foreach($ret as $item){
@@ -84,7 +85,7 @@ include("static/header.php")
                       mysqli_query($dbc, "INSERT INTO ordered_items VALUES ('$oid','$itemid','$quantity')");
                     }
             if($query1){
-              echo "<div class=successmsg>Order placed successfully!</div>";
+              echo "<div class=successmsg>Order placed successfully! Order id: ".$oid."</div>";
             }
             else {
               echo "<div class=errormsg>Something went wrong!</div>";
