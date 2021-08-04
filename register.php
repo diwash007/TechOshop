@@ -112,7 +112,7 @@ if($password != $passwordConfirm){
 <div class="col-sm-4 col-md-12 col-lg-4">
   <?php if(isset($done)) 
   { ?>
-    <div class="successmsg"><span style="font-size:100px;">&#9989;</span> <br> Registration Successful.<br> <a href="index.php" style="color:#fff;">Login here... </a> </div>
+    <div class="successmsg">Registration Successful.<br> <a href="index.php" style="color:#fff;">Login here</a> </div>
   <?php } else { ?>
    <div class="signup_form">
     <form action="" method="POST">

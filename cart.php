@@ -70,13 +70,12 @@ include("static/header.php")
         </div><br>
         <?php
           if(isset($_POST['order'])) {
-            $date=date('Y-m-d');
+            $date = date('Y-m-d-H-i-s');
             $country = $_POST['country'];
             $address = $_POST['address'];
             $query0 = mysqli_query($dbc, "UPDATE users SET country='$country', address='$address' WHERE id='$uid' ");
             $query1 = mysqli_query($dbc, "INSERT INTO orders VALUES ('','$uid','$date','$total','$address')");
-            // $get_oid = mysqli_query($dbc, "SELECT * from orders WHERE total='$total'");
-            $get_oid = mysqli_fetch_assoc($query1);
+            $get_oid = mysqli_query($dbc, "SELECT * from orders WHERE date='$date' and uid='$uid'");
             $oid = mysqli_fetch_array($get_oid)['id'];
             
             foreach($ret as $item){
