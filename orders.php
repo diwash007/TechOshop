@@ -20,9 +20,8 @@ include("static/header.php")
 </head>
 <body>
   <div class="container hero">
-
       <span>Welcome, <b><?php echo $username; ?></b></span>
-      <span style="float:right"><a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span>
+      <span style="float:right"><a href="home.php">&#127968;</a> | <a href="cart.php">Cart</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span><br>
 
       <form method="POST" action="">
       <div class="items">

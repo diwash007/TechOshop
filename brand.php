@@ -34,9 +34,8 @@ include("static/header.php")
 </head>
 <body>
   <div class="container hero">
-
       <span>Welcome, <b><?php echo $username; ?></b></span>
-      <span style="float:right"><a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span>
+      <span style="float:right"><a href="home.php">&#127968;</a> | <a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span><br>
 
       <div class="items">
         <div class="h4 head"><?php echo $b; ?>:</div>
@@ -53,7 +52,7 @@ include("static/header.php")
               $details = $ap['details'];
 
               echo "<a href=item.php?i=".$id."><li>";
-              echo "<img src=".$image." height=200 width=200><br>";
+              echo "<img src=".$image." class=pic><br>";
               echo "<span class=title>".$name."<span class=price>$".$price."</span></span><br>";
               echo $details;
               echo "</li></a>";

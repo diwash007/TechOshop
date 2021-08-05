@@ -30,9 +30,8 @@ include("static/header.php")
 </head>
 <body>
   <div class="container hero">
-
       <span>Welcome, <b><?php echo $username; ?></b></span>
-      <span style="float:right"><a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span>
+      <span style="float:right"><a href="home.php">&#127968;</a> | <a href="cart.php">Cart</a> | <a href="orders.php">orders</a> | <a href="support.php">Support</a> | <a href="logout.php" style="color:red">logout?</a></span><br>
 
       <?php
         if(isset($_POST['addcart'])){ 
@@ -55,7 +54,7 @@ include("static/header.php")
         <div class="item-display">
         <?php
         echo '<div class=img>';
-        echo '<img src='.$iimg.' height=200 width=200></div><br>';
+        echo '<img src='.$iimg.' class=pic></div><br>';
         echo '<span class=iprice><b>$';
         echo $iprice;
         echo '</b></span><div class=details>';

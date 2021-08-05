@@ -12,7 +12,7 @@ if(isset($_SESSION["login_sess"]))
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="static/style.css">
 </head>
-<body>
+<body style="background:#0046C2">
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
@@ -48,8 +48,6 @@ echo "<div class='successmsg'>Reset link has been sent to your registered email 
 </div>
 </form>
    <br> 
-   <p>Already have an account? <a href="index.php">Login</a> </p>
-    <p>Don't have an account yet? <a href="register.php">Sign up</a> </p> 
 		</div>
 		<div class="col-sm-4">
 		</div>

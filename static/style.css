@@ -60,9 +60,10 @@ nav {
   margin: 5px auto;
   border-radius: 5px;
   border: 1px solid green;
-  background: #33CC00;
+  background: lime;
   text-align: left;
-  color: white;
+  color: green;
+  font-weight: bold;
   padding: 10px;
 }
 .hero {
@@ -107,6 +108,10 @@ nav {
 .img {
   text-align:center;
 }
+.pic {
+  height:200px;
+  width:200px;
+}
 .iprice {
   font-size:18px;
   margin-right:35%;
@@ -148,7 +153,12 @@ table tr {
   }
   .payment {
   margin-left:5%;
-}
+  }
+  .pic {
+  height:100px;
+  width:100px;
+  }
+  .title,.price { font-size:15px; }
 }
 
 @media only screen and (max-width: 800px) {
@@ -156,3 +166,7 @@ nav {
   padding-left:20px !important;
   }
 }
+@media only screen and (max-width: 420px) {
+  .payment {
+    padding-right:100px;
+  }
