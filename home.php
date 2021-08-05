@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php require_once("config.php");
 
 $email=$_SESSION["login_email"];

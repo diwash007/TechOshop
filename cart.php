@@ -74,7 +74,7 @@ include("static/header.php")
             $country = $_POST['country'];
             $address = $_POST['address'];
             $query0 = mysqli_query($dbc, "UPDATE users SET country='$country', address='$address' WHERE id='$uid' ");
-            $query1 = mysqli_query($dbc, "INSERT INTO orders VALUES ('','$uid','$date','$total','$address')");
+            $query1 = mysqli_query($dbc, "INSERT INTO orders VALUES (NULL,'$uid','$date','$total','$address')");
             $get_oid = mysqli_query($dbc, "SELECT * from orders WHERE date='$date' and uid='$uid'");
             $oid = mysqli_fetch_array($get_oid)['id'];
             
@@ -87,7 +87,8 @@ include("static/header.php")
               echo "<div class=successmsg>Order placed successfully! Order id: ".$oid."</div>";
             }
             else {
-              echo "<div class=errormsg>Something went wrong!</div>";
+              echo "<div class=errormsg>Something went wrong! Please try again later.</div>";
+              die();
             }
 
             $query = mysqli_query($dbc, "DELETE FROM cart WHERE uid='$uid'");

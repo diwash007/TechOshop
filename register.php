@@ -1,12 +1,13 @@
-<!DOCTYPE html>
 <?php require_once("config.php"); 
 if(isset($_SESSION["login_sess"])) 
 {
   header("location:home.php"); 
 }?>
+<!DOCTYPE html>
+
 <html>
 <head>
-  <title> SignUp - Techno Smarter</title>
+  <title> Registration - TechOshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="static/style.css">
@@ -87,7 +88,7 @@ if($password != $passwordConfirm){
         $options = array("cost"=>4);
         $password = password_hash($password,PASSWORD_BCRYPT,$options);
 
-        $result = mysqli_query($dbc,"INSERT into users values('','$fname','$lname','$username','$email','$password','$date','user','','')");
+        $result = mysqli_query($dbc,"INSERT into users values(NULL,'$fname','$lname','$username','$email','$password','$date','user',NULL,NULL)");
 
         if($result)
         {

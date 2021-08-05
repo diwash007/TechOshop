@@ -28,7 +28,7 @@ include("static/header.php")
               $brand = $_POST['brand'];
               $imglink = $_POST['imglink'];
               $details = $_POST['details'];
-              $query = mysqli_query($dbc, "INSERT INTO items VALUES ('','$name','$price','$brand','$imglink','$details') ");
+              $query = mysqli_query($dbc, "INSERT INTO items VALUES (NULL,'$name','$price','$brand','$imglink','$details') ");
               if($query) {
                 echo "<div class=successmsg>Item added successfully!</div>";
               }

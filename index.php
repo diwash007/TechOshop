@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 <?php require_once("config.php"); 
 if(isset($_SESSION["login_sess"])) 
 {
   header("location:home.php"); 
 }?>
+<!DOCTYPE html>
 <html>
 <head><br>
-  <title> Login - Techno Smarter</title>
+  <title> Login - Techoshop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="static/style.css">
