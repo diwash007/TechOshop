@@ -1,16 +1,21 @@
-<?php require_once("config.php");
+<?php require_once ("config.php");
 
-$email=$_SESSION["login_email"];
+$email = $_SESSION["login_email"];
 $findresult = mysqli_query($dbc, "SELECT * FROM users WHERE email= '$email'");
-if($res = mysqli_fetch_array($findresult)) {
-  $username = $res['username'];
-  $uid = $res['id'];
-  if($res['role'] != 'admin'){ header("location:home.php"); } //1d13i14609
+if ($res = mysqli_fetch_array($findresult))
+{
+    $username = $res['username'];
+    $uid = $res['id'];
+    if ($res['role'] != 'admin')
+    {
+        header("location:home.php");
+    } //1d13i14609
+    
 }
-include("static/header.php")
+include ("static/header.php")
 ?> 
-  <title> Admin - TechOshop</title>
-  <link rel="stylesheet" href="static/style.css">
+<title> Admin - TechOshop</title>
+<link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <div class="container hero">
@@ -21,22 +26,25 @@ include("static/header.php")
       <div class="items">
         <div class="h4 head">Admin:</div>
         <div class="item-display">
-         <?php
-             if(isset($_POST['submit'])) {
-              $name = $_POST['name'];
-              $price = $_POST['price'];
-              $brand = $_POST['brand'];
-              $imglink = $_POST['imglink'];
-              $details = $_POST['details'];
-              $query = mysqli_query($dbc, "INSERT INTO items VALUES (NULL,'$name','$price','$brand','$imglink','$details') ");
-              if($query) {
-                echo "<div class=successmsg>Item added successfully!</div>";
-              }
-              else {
-                echo "<div class=errormsg>Something went wrong! Please try again later.</div>";
-              }
-             }
-             ?>
+<?php
+if (isset($_POST['submit']))
+{
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $brand = $_POST['brand'];
+    $imglink = $_POST['imglink'];
+    $details = $_POST['details'];
+    $query = mysqli_query($dbc, "INSERT INTO items VALUES (NULL,'$name','$price','$brand','$imglink','$details') ");
+    if ($query)
+    {
+        echo "<div class=successmsg>Item added successfully!</div>";
+    }
+    else
+    {
+        echo "<div class=errormsg>Something went wrong! Please try again later.</div>";
+    }
+}
+?>
         </div><br>
 
         <div class="cartbtn_area">
@@ -61,4 +69,4 @@ include("static/header.php")
       </div>
 </div>
 
-<?php include("static/footer.php")?>
+<?php include ("static/footer.php") ?>

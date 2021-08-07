@@ -44,10 +44,10 @@ if(strlen($lname)>20){  // Max
 if(!preg_match("/^[A-Za-z _]*[A-Za-z ]+[A-Za-z _]*$/", $lname)){
   $error[] = 'Invalid Entry for Last Name. Please Enter letters without any Digit or special symbols like ( 1,2,3#,$,%,&,*,!,~,`,^,-,)';
 }    
-      if(strlen($username)<3){ // Change Minimum Lenghth   
+      if(strlen($username)<3){ // checking Minimum Lenghth   
         $error[] = 'Username must be minimum of 3 characters.';
       }
-  if(strlen($username)>20){ // Change Max Length 
+  if(strlen($username)>20){ // checking Max Length 
     $error[] = 'Username : Max length 20 Characters';
   }
   if(!preg_match("/^^[^0-9][a-z0-9]+([_-]?[a-z0-9])*$/", $username)){

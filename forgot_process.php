@@ -13,7 +13,7 @@ if($res = mysqli_fetch_array($findresult))
 $oldftemail = $res['email'];  
 }
 $token = bin2hex(random_bytes(50));
- $inresult = mysqli_query($dbc,"insert into pass_reset values('','$oldftemail','$token')"); 
+ $inresult = mysqli_query($dbc,"insert into pass_reset values('','$oldftemail','$token')") or trigger_error("Query Failed! SQL: - Error: ".mysqli_error($dbc), E_USER_ERROR); 
  if ($inresult)  
  { 
 $FromName="TechOshop";
@@ -21,6 +21,7 @@ $credits="All rights are reserved | TechOshop ";
 $headers = "From TechOshop";
          $subject="TechOshop - Password reset"; 
      $msg="Your password reset link <br> http://localhost:8081/php/form/password-reset.php?token=".$token." <br> Reset your password with this link .Click or open in new tab<br><br> <br> <br> <center>".$credits."</center>"; 
+     mail($oldftemail, $subject, $msg, $headers);
    if(mail($oldftemail, $subject, $msg, $headers)){
 header("location:forgot-password.php?sent=1"); 
 $hide='1';

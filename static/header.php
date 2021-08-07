@@ -4,7 +4,7 @@ if(!isset($_SESSION["login_sess"]))
   header("location:../index.php"); 
 }
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">

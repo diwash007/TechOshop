@@ -25,7 +25,7 @@ if($res = mysqli_fetch_array($findresult))
 
 include("static/header.php")
 ?> 
-  <title> <?php echo $i; ?> - TechOshop</title>
+  <title> <?php echo $iname; ?> - TechOshop</title>
   <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
